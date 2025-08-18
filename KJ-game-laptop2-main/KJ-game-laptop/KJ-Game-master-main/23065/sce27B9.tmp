@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://be41ru4j3v24"]
+
+[ext_resource type="PackedScene" uid="uid://covmf03pu1sll" path="res://rack.tscn" id="1_kb4ok"]
+[ext_resource type="Script" path="res://final_portal_script.gd" id="3_cif3i"]
+[ext_resource type="PackedScene" uid="uid://bs0gxavncsid4" path="res://portal.tscn" id="3_frlg1"]
+[ext_resource type="Texture2D" uid="uid://yx5x33gpaa36" path="res://OBUNGA.PNG" id="3_xej8f"]
+[ext_resource type="Script" path="res://die_script.gd" id="4_rk8wb"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8v6x7"]
+texture = ExtResource("3_xej8f")
+texture_region_size = Vector2i(358, 361)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-179, 180.5, -179, -180.5, 179, -180.5, 179, 180.5)
+
+[sub_resource type="TileSet" id="TileSet_ms3cs"]
+tile_size = Vector2i(358, 361)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_8v6x7")
+
+[node name="Scene" type="Node2D"]
+position = Vector2(60, 0)
+
+[node name="rack" parent="." instance=ExtResource("1_kb4ok")]
+unique_name_in_owner = true
+position = Vector2(13286, -9157)
+
+[node name="FinalPortal" parent="." instance=ExtResource("3_frlg1")]
+position = Vector2(8034, -1218)
+script = ExtResource("3_cif3i")
+
+[node name="TopPortal" parent="." instance=ExtResource("3_frlg1")]
+position = Vector2(12679, -8789)
+
+[node name="KillZone" parent="." instance=ExtResource("3_frlg1")]
+position = Vector2(6641, 9361)
+scale = Vector2(500, 100)
+script = ExtResource("4_rk8wb")
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ms3cs")
+format = 2
+layer_0/tile_data = PackedInt32Array(65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, -65532, 0, 0, -131070, 0, 0, -131072, 0, 0, -131074, 0, 0, -262144, 0, 0, -262141, 0, 0, -196601, 0, 0, -196598, 0, 0, -262131, 0, 0, -196591, 0, 0, -196590, 0, 0, -196589, 0, 0, -196588, 0, 0, -196587, 0, 0, -196586, 0, 0, -196585, 0, 0, -327661, 0, 0, -393197, 0, 0, -393196, 0, 0, -393195, 0, 0, -393194, 0, 0, -393193, 0, 0, -327657, 0, 0, -262121, 0, 0, -196602, 0, 0, -262130, 0, 0, -196595, 0, 0, -131060, 0, 0, -720855, 0, 0, -720854, 0, 0, -720853, 0, 0, -720852, 0, 0, -655315, 0, 0, -655314, 0, 0, -655313, 0, 0, -655312, 0, 0, -720847, 0, 0, -720846, 0, 0, -720845, 0, 0, -786380, 0, 0, -851915, 0, 0, -917450, 0, 0, -982989, 0, 0, -982990, 0, 0, -982991, 0, 0, -917455, 0, 0, -851920, 0, 0, -851921, 0, 0, -851922, 0, 0, -917459, 0, 0, -982995, 0, 0, -982996, 0, 0, -982997, 0, 0, -917456, 0, 0, 131071, 0, 0, -982999, 0, 0, -1114071, 0, 0, -983000, 0, 0, -1048537, 0, 0, -1179609, 0, 0, -1245143, 0, 0, -1310681, 0, 0, -1376215, 0, 0, -1441753, 0, 0, -1507287, 0, 0, -1572825, 0, 0, -1572826, 0, 0, -1572827, 0, 0, -1572828, 0, 0, -1572829, 0, 0, -1638366, 0, 0, -1703901, 0, 0)

@@ -1,0 +1,138 @@
+[gd_scene load_steps=24 format=3 uid="uid://b6btpcek4h4oi"]
+
+[ext_resource type="Script" path="res://blue_guy.gd" id="1_eg8jm"]
+[ext_resource type="Script" path="res://bluedohit.gd" id="3_xcdbh"]
+[ext_resource type="Script" path="res://bluegethit.gd" id="4_cchjv"]
+[ext_resource type="Script" path="res://detectright.gd" id="5_o12ne"]
+[ext_resource type="Texture2D" uid="uid://wqi274wro51i" path="res://blue guy/idle/bluedle1.png.png" id="6_avo0y"]
+[ext_resource type="Script" path="res://detectleft.gd" id="6_edomk"]
+[ext_resource type="Texture2D" uid="uid://ccioh0eigalf6" path="res://blue guy/idle/bluedle2.png.png" id="7_jcrnh"]
+[ext_resource type="Texture2D" uid="uid://b4b30btbp58nq" path="res://blue guy/run/run stick arm-1.png.png" id="8_mwnm2"]
+[ext_resource type="Texture2D" uid="uid://djlbqdfe5781o" path="res://blue guy/run/run stick arm-2.png.png" id="9_wb0j0"]
+[ext_resource type="Texture2D" uid="uid://c8ljqkjfintre" path="res://blue guy/run/run stick arm-3.png.png" id="10_3butd"]
+[ext_resource type="Texture2D" uid="uid://crqklfwm1m2e6" path="res://blue guy/run/run stick arm-4.png.png" id="11_fj4uo"]
+[ext_resource type="Texture2D" uid="uid://c43djkyk3mfho" path="res://blue guy/run/run stick arm-5.png.png" id="12_g16qq"]
+[ext_resource type="Texture2D" uid="uid://dtjqje0s54mwp" path="res://blue guy/run/run stick arm-6.png.png" id="13_x04la"]
+[ext_resource type="Texture2D" uid="uid://camvdlm7xq5x2" path="res://blue guy/run/run stick arm-7.png.png" id="14_dlbwy"]
+[ext_resource type="Texture2D" uid="uid://cg4w11p0qyldr" path="res://blue guy/run/run stick arm-8.png.png" id="15_3kr4y"]
+[ext_resource type="Texture2D" uid="uid://b6f88hcqe4lgd" path="res://blue guy/run/run stick arm-9.png.png" id="16_0d2xn"]
+[ext_resource type="Texture2D" uid="uid://coprov0hhep3f" path="res://blue guy/run/run stick arm-10.png.png" id="17_avyqo"]
+[ext_resource type="Script" path="res://blueguyanims.gd" id="18_7836k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5edx7"]
+size = Vector2(150, 230)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1jes"]
+size = Vector2(111, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iymyx"]
+size = Vector2(98, 224)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_al1b5"]
+size = Vector2(571, 535)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0adgy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_avo0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jcrnh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_mwnm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wb0j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3butd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fj4uo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_g16qq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_x04la")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_dlbwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_3kr4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0d2xn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_avyqo")
+}],
+"loop": true,
+"name": &"run",
+"speed": 6.0
+}]
+
+[node name="Blue Guy" type="CharacterBody2D"]
+position = Vector2(-602, -314)
+script = ExtResource("1_eg8jm")
+metadata/_edit_group_ = true
+
+[node name="physicsbody" type="CollisionShape2D" parent="."]
+position = Vector2(3, -14)
+shape = SubResource("RectangleShape2D_5edx7")
+debug_color = Color(0.965271, 0, 0.487712, 0.42)
+
+[node name="attackbox" type="Area2D" parent="."]
+position = Vector2(1, -12)
+script = ExtResource("3_xcdbh")
+
+[node name="hitthembox" type="CollisionShape2D" parent="attackbox"]
+position = Vector2(57.5, 23)
+shape = SubResource("RectangleShape2D_n1jes")
+
+[node name="gethit" type="Area2D" parent="attackbox"]
+script = ExtResource("4_cchjv")
+
+[node name="gethitbox" type="CollisionShape2D" parent="attackbox/gethit"]
+position = Vector2(4, 1)
+shape = SubResource("RectangleShape2D_iymyx")
+
+[node name="detectright" type="Area2D" parent="."]
+position = Vector2(132, -4)
+script = ExtResource("5_o12ne")
+
+[node name="detectrighthb" type="CollisionShape2D" parent="detectright"]
+position = Vector2(269, -1)
+shape = SubResource("RectangleShape2D_al1b5")
+debug_color = Color(0.567014, 0.549587, 0.265252, 0.42)
+
+[node name="detectleft" type="Area2D" parent="."]
+script = ExtResource("6_edomk")
+
+[node name="detectlefthb" type="CollisionShape2D" parent="detectleft"]
+position = Vector2(-380, -2)
+shape = SubResource("RectangleShape2D_al1b5")
+debug_color = Color(0.567014, 0.549587, 0.265252, 0.42)
+
+[node name="BlueManThingGuyNotTranslparent" type="AnimatedSprite2D" parent="."]
+position = Vector2(-7, -30)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_0adgy")
+animation = &"run"
+script = ExtResource("18_7836k")
+
+[connection signal="body_entered" from="attackbox" to="attackbox" method="_on_body_entered"]
+[connection signal="body_exited" from="attackbox" to="attackbox" method="_on_body_exited"]
+[connection signal="body_entered" from="attackbox/gethit" to="attackbox/gethit" method="_on_body_entered"]
+[connection signal="body_entered" from="detectright" to="detectright" method="_on_body_entered"]
+[connection signal="body_exited" from="detectright" to="detectright" method="_on_body_exited"]
+[connection signal="body_entered" from="detectleft" to="detectleft" method="_on_body_entered"]
+[connection signal="body_exited" from="detectleft" to="detectleft" method="_on_body_exited"]

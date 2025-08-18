@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://covmf03pu1sll"]
+
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_84gjw"]
+[ext_resource type="Texture2D" uid="uid://diesjdc04r8kx" path="res://Rick_mewing-1.webp" id="2_i8jd8"]
+
+[node name="Rack" type="CharacterBody2D"]
+position = Vector2(582, 241)
+script = ExtResource("1_84gjw")
+
+[node name="RickMewing-1" type="Sprite2D" parent="."]
+position = Vector2(-25, 16.2187)
+scale = Vector2(0.342105, 0.336478)
+texture = ExtResource("2_i8jd8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-32, 155)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-25, 81)
+scale = Vector2(5.6, 8.3)
+polygon = PackedVector2Array(-7.85714, -11.4458, -11.7857, -8.55421, -14.6429, -6.98795, -15.1786, -4.81927, -14.8214, -3.49397, -14.2857, -2.40964, -14.4643, -1.56626, -14.6429, -0.602409, -14.4643, 0.48193, -14.1071, 1.56627, -13.5714, 2.53012, -12.1429, 4.33735, -8.75, 6.14458, -9.46429, 7.10844, -9.82143, 8.43373, -9.82143, 10, 11.0714, 10, 10.8929, 9.15663, 13.0357, 5.90362, 14.4643, 3.85542, 15, 2.6506, 15.1786, 1.3253, 15.3571, 0.240967, 15.1786, -1.20482, 14.6429, -3.25301, 14.1071, -4.09638, 14.1071, -5.42168, 13.2143, -6.74699, 12.5, -7.46988, 11.25, -8.19277, 10.8929, -9.39759, 10.3571, -10.1205, 9.28571, -10.9639, 7.67857, -11.3253, 5.53571, -11.2048, 4.64285, -11.5663, 3.21429, -11.9277, 1.25, -12.2892, -0.89286, -12.5301, -1.60714, -13.1325, -2.85714, -17.8313, -4.28571, -19.3976, -7.5, -19.8795, -10.7143, -18.9157, -11.0714, -16.3855)

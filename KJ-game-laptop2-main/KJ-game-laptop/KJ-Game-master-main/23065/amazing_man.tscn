@@ -1,0 +1,107 @@
+[gd_scene load_steps=17 format=3 uid="uid://djgrri2qjoose"]
+
+[ext_resource type="Script" path="res://amazing_man.gd" id="1_c612k"]
+[ext_resource type="Script" path="res://amazinggethit.gd" id="2_je3x0"]
+[ext_resource type="Texture2D" uid="uid://b6y1sjgkluwgw" path="res://blue man thing guy not translparent.PNG" id="3_giju7"]
+[ext_resource type="Script" path="res://blue_man_thing_guy_not_translparent.gd" id="4_obewh"]
+[ext_resource type="Script" path="res://detectright_a.gd" id="5_aktdl"]
+[ext_resource type="Script" path="res://detectleft_a.gd" id="6_xl32g"]
+[ext_resource type="Texture2D" uid="uid://p6iwp8k7hnjk" path="res://amazing man/idle.png.png" id="7_4yuei"]
+[ext_resource type="Texture2D" uid="uid://bm333nhtngwjv" path="res://amazing man/throw/New Piskel-2.png.png" id="8_hvd8s"]
+[ext_resource type="Texture2D" uid="uid://c8iv5tgtqxs7e" path="res://amazing man/throw/New Piskel-3.png.png" id="9_x3iit"]
+[ext_resource type="Texture2D" uid="uid://c3i1fbdruu8s0" path="res://amazing man/throw/New Piskel-4.png.png" id="10_hqdk2"]
+[ext_resource type="Texture2D" uid="uid://d1gx23gs4t325" path="res://amazing man/throw/New Piskel-5.png.png" id="11_fpfj5"]
+[ext_resource type="Texture2D" uid="uid://bdqorj4n6xogo" path="res://amazing man/throw/New Piskel-6.png.png" id="12_5w4ou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fvmy"]
+size = Vector2(296, 262)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdgv8"]
+size = Vector2(198, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ie247"]
+size = Vector2(1820.37, 609.159)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rif01"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_4yuei")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_hvd8s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_x3iit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hqdk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fpfj5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5w4ou")
+}],
+"loop": true,
+"name": &"throw",
+"speed": 5.0
+}]
+
+[node name="Amazing man" type="CharacterBody2D"]
+position = Vector2(1312, -635)
+script = ExtResource("1_c612k")
+metadata/_edit_group_ = true
+
+[node name="GetHit" type="Area2D" parent="."]
+script = ExtResource("2_je3x0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GetHit"]
+position = Vector2(7, -6)
+shape = SubResource("RectangleShape2D_0fvmy")
+debug_color = Color(0.94508, 5.77569e-06, 0.594116, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, -6)
+shape = SubResource("RectangleShape2D_vdgv8")
+
+[node name="amazingsprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(6.63147, -25.1588)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_giju7")
+script = ExtResource("4_obewh")
+
+[node name="detectrightA" type="Area2D" parent="."]
+position = Vector2(111, -25)
+scale = Vector2(0.424638, 0.531881)
+script = ExtResource("5_aktdl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectrightA"]
+position = Vector2(899.28, -3.46179)
+shape = SubResource("RectangleShape2D_ie247")
+debug_color = Color(0.780392, 0.439216, 0, 0.419608)
+
+[node name="detectleftA" type="Area2D" parent="."]
+position = Vector2(-89, -25)
+scale = Vector2(0.424638, 0.531881)
+script = ExtResource("6_xl32g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectleftA"]
+position = Vector2(-924.626, -3.46168)
+shape = SubResource("RectangleShape2D_ie247")
+debug_color = Color(0.780392, 0.439216, 0, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -3)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_rif01")
+animation = &"idle"
+frame_progress = 1.0
+
+[connection signal="body_entered" from="GetHit" to="GetHit" method="_on_body_entered"]

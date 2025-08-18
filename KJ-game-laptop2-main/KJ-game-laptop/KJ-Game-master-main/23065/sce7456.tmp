@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://be41ru4j3v24"]
+
+[ext_resource type="PackedScene" uid="uid://covmf03pu1sll" path="res://rack.tscn" id="1_kb4ok"]
+[ext_resource type="Script" path="res://final_portal_script.gd" id="3_cif3i"]
+[ext_resource type="PackedScene" uid="uid://bs0gxavncsid4" path="res://portal.tscn" id="3_frlg1"]
+[ext_resource type="Texture2D" uid="uid://d3y1p7mp87x3k" path="res://icon.svg" id="4_2g3dk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_el0ot"]
+size = Vector2(129, 129)
+
+[node name="Scene" type="Node2D"]
+position = Vector2(60, 0)
+
+[node name="FinalPortal" parent="." instance=ExtResource("3_frlg1")]
+position = Vector2(8034, -1218)
+script = ExtResource("3_cif3i")
+
+[node name="TopPortal" parent="." instance=ExtResource("3_frlg1")]
+position = Vector2(12679, -8789)
+
+[node name="KillZone" parent="." instance=ExtResource("3_frlg1")]
+position = Vector2(-1516, -289)
+scale = Vector2(10.4133, 4.70142)
+teleport_x = 14861
+teleport_y = -4330
+
+[node name="Rack" parent="." instance=ExtResource("1_kb4ok")]
+position = Vector2(82, -417)
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(75.4988, 123.5)
+scale = Vector2(12.2891, 2.57031)
+texture = ExtResource("4_2g3dk")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Icon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/StaticBody2D"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_el0ot")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(842.501, -152.5)
+scale = Vector2(0.304697, 6.88281)
+texture = ExtResource("4_2g3dk")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Icon2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon2/StaticBody2D"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_el0ot")

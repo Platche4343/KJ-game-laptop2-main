@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs0gxavncsid4"]
+
+[ext_resource type="Script" path="res://KillZone.gd" id="1_f015g"]
+[ext_resource type="Texture2D" uid="uid://bf3sinx5w3lhi" path="res://biden.png" id="1_rjhhv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t3icv"]
+radius = 60.0333
+
+[node name="portal" type="Area2D"]
+position = Vector2(350, 218)
+script = ExtResource("1_f015g")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.999939, 8.00003)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("1_rjhhv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 9)
+shape = SubResource("CircleShape2D_t3icv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
