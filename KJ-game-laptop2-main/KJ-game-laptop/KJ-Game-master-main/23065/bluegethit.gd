@@ -30,14 +30,13 @@ func _on_special_area_entered(by_area: Area2D) -> void:
 		Bluehealth -= 10
 	if Rack.combo < 4:
 		parent.stunned = true
-		combochecker = Rack.combo
-		await get_tree().create_timer(1).timeout
-		if combochecker < Rack.combo or Rack.combo == 0:
-			parent.stunned = false
-	elif Rack.combo == 5:
-		parent.stunned = true
-		await get_tree().create_timer(1).timeout
+	combochecker = Rack.combo
+	await get_tree().create_timer(1).timeout
+	if combochecker < Rack.combo or Rack.combo == 0:
 		parent.stunned = false
+		
+		
+
 	print("BLUE", Bluehealth)
 func _process(_delta):
 	if Bluehealth <= 0:
@@ -45,3 +44,5 @@ func _process(_delta):
 		emit_signal("freedom")
 		
 		free()
+func stuntimer(time):
+	pass

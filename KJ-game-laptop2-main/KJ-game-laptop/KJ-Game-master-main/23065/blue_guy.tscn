@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b6btpcek4h4oi"]
+[gd_scene load_steps=40 format=3 uid="uid://b6btpcek4h4oi"]
 
 [ext_resource type="Script" path="res://blue_guy.gd" id="1_eg8jm"]
 [ext_resource type="Script" path="res://bluedohit.gd" id="3_xcdbh"]
@@ -6,33 +6,107 @@
 [ext_resource type="Script" path="res://detectright.gd" id="5_o12ne"]
 [ext_resource type="Texture2D" uid="uid://wqi274wro51i" path="res://blue guy/idle/bluedle1.png.png" id="6_avo0y"]
 [ext_resource type="Script" path="res://detectleft.gd" id="6_edomk"]
+[ext_resource type="Texture2D" uid="uid://dqniea0n40koq" path="res://blue guy/Getup/blue getup-1.png.png" id="6_le8ea"]
 [ext_resource type="Texture2D" uid="uid://ccioh0eigalf6" path="res://blue guy/idle/bluedle2.png.png" id="7_jcrnh"]
+[ext_resource type="Texture2D" uid="uid://dxnm6it3jkb75" path="res://blue guy/Getup/blue getup-2.png.png" id="7_m80nl"]
 [ext_resource type="Texture2D" uid="uid://b4b30btbp58nq" path="res://blue guy/run/run stick arm-1.png.png" id="8_mwnm2"]
+[ext_resource type="Texture2D" uid="uid://2ieydkdwveld" path="res://blue guy/knockback/blue knockback-1.png.png" id="8_ovob4"]
+[ext_resource type="Texture2D" uid="uid://dndx7l2tvmx22" path="res://blue guy/Getup/blue getup-3.png.png" id="8_pwjdm"]
+[ext_resource type="Texture2D" uid="uid://bftal1ovgvo7f" path="res://blue guy/Getup/blue getup-4.png.png" id="9_lwuxt"]
 [ext_resource type="Texture2D" uid="uid://djlbqdfe5781o" path="res://blue guy/run/run stick arm-2.png.png" id="9_wb0j0"]
 [ext_resource type="Texture2D" uid="uid://c8ljqkjfintre" path="res://blue guy/run/run stick arm-3.png.png" id="10_3butd"]
+[ext_resource type="Texture2D" uid="uid://cpcni4vdayopl" path="res://blue guy/Getup/blue getup-5.png.png" id="10_xq0n3"]
+[ext_resource type="Texture2D" uid="uid://3svmsnoyq6rq" path="res://blue guy/Getup/blue getup-6.png.png" id="11_7e5k0"]
 [ext_resource type="Texture2D" uid="uid://crqklfwm1m2e6" path="res://blue guy/run/run stick arm-4.png.png" id="11_fj4uo"]
 [ext_resource type="Texture2D" uid="uid://c43djkyk3mfho" path="res://blue guy/run/run stick arm-5.png.png" id="12_g16qq"]
+[ext_resource type="Texture2D" uid="uid://bsdbp4o5yqqfj" path="res://blue guy/Getup/blue getup-7.png.png" id="12_oq10h"]
+[ext_resource type="Texture2D" uid="uid://85wk3fr61m2k" path="res://blue guy/Getup/blue getup-8.png.png" id="13_gb6lf"]
 [ext_resource type="Texture2D" uid="uid://dtjqje0s54mwp" path="res://blue guy/run/run stick arm-6.png.png" id="13_x04la"]
 [ext_resource type="Texture2D" uid="uid://camvdlm7xq5x2" path="res://blue guy/run/run stick arm-7.png.png" id="14_dlbwy"]
+[ext_resource type="Texture2D" uid="uid://8xppe3dj5n3l" path="res://blue guy/Getup/blue getup-9.png.png" id="14_sibct"]
 [ext_resource type="Texture2D" uid="uid://cg4w11p0qyldr" path="res://blue guy/run/run stick arm-8.png.png" id="15_3kr4y"]
+[ext_resource type="Texture2D" uid="uid://k88t0udxiwq" path="res://blue guy/Getup/blue getup-10.png.png" id="15_32c7a"]
 [ext_resource type="Texture2D" uid="uid://b6f88hcqe4lgd" path="res://blue guy/run/run stick arm-9.png.png" id="16_0d2xn"]
+[ext_resource type="Texture2D" uid="uid://jlucod8ud2ub" path="res://blue guy/Getup/blue getup-11.png.png" id="16_4yx6h"]
 [ext_resource type="Texture2D" uid="uid://coprov0hhep3f" path="res://blue guy/run/run stick arm-10.png.png" id="17_avyqo"]
 [ext_resource type="Script" path="res://blueguyanims.gd" id="18_7836k"]
+[ext_resource type="Texture2D" uid="uid://dpgwru3rq45xw" path="res://blue guy/hurt/blue hurt-1.png.png" id="18_nkl6v"]
+[ext_resource type="Texture2D" uid="uid://dxix8b616i6tk" path="res://blue guy/hurt/blue hurt-2.png.png" id="19_mxw10"]
+[ext_resource type="Texture2D" uid="uid://53pjsqrgpq5h" path="res://blue guy/hurt/blue hurt-3.png.png" id="20_irw7w"]
+[ext_resource type="Texture2D" uid="uid://bhamyv8hyq1ql" path="res://blue guy/hurt/blue hurt-4.png.png" id="21_p0vjy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5edx7"]
 size = Vector2(150, 230)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n1jes"]
-size = Vector2(111, 180)
+size = Vector2(85, 180)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iymyx"]
-size = Vector2(98, 224)
+size = Vector2(113, 224)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_al1b5"]
 size = Vector2(571, 535)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0adgy"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_le8ea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_m80nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pwjdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lwuxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xq0n3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7e5k0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_oq10h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gb6lf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_sibct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_32c7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4yx6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_avo0y")
+}],
+"loop": false,
+"name": &"getup",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_nkl6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_mxw10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_irw7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_p0vjy")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 0.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("6_avo0y")
@@ -43,6 +117,14 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ovob4")
+}],
+"loop": false,
+"name": &"knockback",
+"speed": 0.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -82,6 +164,7 @@ animations = [{
 
 [node name="Blue Guy" type="CharacterBody2D"]
 position = Vector2(-602, -314)
+collision_layer = 2
 script = ExtResource("1_eg8jm")
 metadata/_edit_group_ = true
 
@@ -92,21 +175,24 @@ debug_color = Color(0.965271, 0, 0.487712, 0.42)
 
 [node name="attackbox" type="Area2D" parent="."]
 position = Vector2(1, -12)
+collision_mask = 4
 script = ExtResource("3_xcdbh")
 
 [node name="hitthembox" type="CollisionShape2D" parent="attackbox"]
-position = Vector2(57.5, 23)
+position = Vector2(71.5, 23)
 shape = SubResource("RectangleShape2D_n1jes")
 
 [node name="gethit" type="Area2D" parent="attackbox"]
+collision_mask = 4
 script = ExtResource("4_cchjv")
 
 [node name="gethitbox" type="CollisionShape2D" parent="attackbox/gethit"]
-position = Vector2(4, 1)
+position = Vector2(2.5, 1)
 shape = SubResource("RectangleShape2D_iymyx")
 
 [node name="detectright" type="Area2D" parent="."]
 position = Vector2(132, -4)
+collision_mask = 4
 script = ExtResource("5_o12ne")
 
 [node name="detectrighthb" type="CollisionShape2D" parent="detectright"]
@@ -115,6 +201,7 @@ shape = SubResource("RectangleShape2D_al1b5")
 debug_color = Color(0.567014, 0.549587, 0.265252, 0.42)
 
 [node name="detectleft" type="Area2D" parent="."]
+collision_mask = 4
 script = ExtResource("6_edomk")
 
 [node name="detectlefthb" type="CollisionShape2D" parent="detectleft"]
@@ -126,7 +213,7 @@ debug_color = Color(0.567014, 0.549587, 0.265252, 0.42)
 position = Vector2(-7, -30)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_0adgy")
-animation = &"run"
+animation = &"knockback"
 script = ExtResource("18_7836k")
 
 [connection signal="body_entered" from="attackbox" to="attackbox" method="_on_body_entered"]

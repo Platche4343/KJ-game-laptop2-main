@@ -1,5 +1,6 @@
 extends Area2D
 signal relayfreedom
+signal knockbackrack
 var Touching = false
 var oncooldown = false
 @onready var parent = get_parent()
@@ -24,10 +25,11 @@ func _on_body_exited(body):
 
 func _process(_delta):
 	if parent.stunned == false:
-		if Touching == true and oncooldown == false:
+		if Touching == true and oncooldown == false and parent.stunned == false:
 			await get_tree().create_timer(0.6).timeout
 			if Touching == true and oncooldown == false and parent.stunned == false:
 				Global.Health -= 16
+				emit_signal("knockbackrack")
 				#print(Global.Health)
 			oncooldown = true
 			await get_tree().create_timer(0.6).timeout
@@ -38,6 +40,7 @@ func _process(_delta):
 			parent.attacking = false
 	if Global.Health <= 0:
 		Touching = false
+	#print(parent.stunned)
 func _ready():
 	$gethit.connect("freedom", Callable(self, "_on_freedom"))
 	get_node("../detectright").connect("goright", Callable(self, "go_right"))

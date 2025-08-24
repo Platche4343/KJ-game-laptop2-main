@@ -14,4 +14,4 @@ func healthdeduction(health):
 	if Global.Health <= health:
 		var frameno = Global.Health / 4 
 		set_frame(frameno)
-		print(frameno)
+		#print(frameno)

@@ -54,7 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://dvve2d2t2bi48" path="res://terrain-1.png.png" id="52_128v3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_715n0"]
-size = Vector2(153, 144)
+size = Vector2(244.5, 144)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6hnwk"]
 animations = [{
@@ -64,10 +64,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("7_62mwb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_62mwb")
 }],
 "loop": false,
 "name": &"dash",
-"speed": 24.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -225,12 +228,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_15hbe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_0kj1b")
-}, {
-"duration": 1.0,
 "texture": ExtResource("9_u4bcn")
 }, {
 "duration": 1.0,
@@ -247,6 +244,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("14_qakhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_15hbe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0kj1b")
 }],
 "loop": true,
 "name": &"walk",
@@ -258,6 +261,7 @@ size = Vector2(120, 247)
 
 [node name="Rack" type="CharacterBody2D"]
 position = Vector2(582, 241)
+collision_layer = 4
 script = ExtResource("1_jnnw5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -271,7 +275,7 @@ script = ExtResource("5_udoqa")
 
 [node name="punchhitbox" type="CollisionShape2D" parent="Punch area"]
 unique_name_in_owner = true
-position = Vector2(90, 59)
+position = Vector2(-92.25, 57)
 shape = SubResource("RectangleShape2D_715n0")
 script = ExtResource("5_0vvmb")
 
@@ -280,9 +284,8 @@ unique_name_in_owner = true
 position = Vector2(0, 37)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_6hnwk")
-animation = &"dash"
-frame = 1
-frame_progress = 1.0
+animation = &"walk"
+frame_progress = 0.142025
 flip_h = true
 script = ExtResource("17_d3mu1")
 
@@ -291,7 +294,6 @@ position = Vector2(-16, 41.5)
 shape = SubResource("RectangleShape2D_2j6aj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 show_behind_parent = true
 position = Vector2(46, 32)
 scale = Vector2(13.1031, 9.17076)

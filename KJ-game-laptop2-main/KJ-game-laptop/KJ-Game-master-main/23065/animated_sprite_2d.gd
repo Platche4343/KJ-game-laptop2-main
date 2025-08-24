@@ -1,5 +1,5 @@
-extends Sprite2D
-"""
+extends AnimatedSprite2D
+
 @onready var right = get_node_or_null("../detectrightA")
 @onready var left = get_node_or_null("../detectleftA")
 var direction
@@ -12,11 +12,14 @@ func _ready():
 	
 func _on_body_enteredright(body: Node2D) -> void:
 	if body.name == "Rack":
-		transform.x.x = 0.5
+		transform.x.x = 0.8
 		direction = 1
 		while direction == 1:
-			await get_tree().create_timer(3).timeout
+			await get_tree().create_timer(2).timeout
+			play("throw")
+			await get_tree().create_timer(0.4).timeout
 			triggerthrow()
+			play("idle")
 			await get_tree().create_timer(5).timeout
 			if direction != 1:
 				break
@@ -25,11 +28,14 @@ func _on_body_exitedright(body: Node2D) -> void:
 	direction = 0
 func _on_body_enteredleft(body: Node2D) -> void:
 	if body.name == "Rack":
-		transform.x.x = -0.5
+		transform.x.x = -0.8
 		direction = -1
 		while direction == -1:
-			await get_tree().create_timer(3).timeout
+			await get_tree().create_timer(2).timeout
+			play("throw")
+			await get_tree().create_timer(0.4).timeout
 			triggerthrow()
+			play("idle")
 			await get_tree().create_timer(5).timeout
 			if direction != -1:
 				break
@@ -37,4 +43,4 @@ func _on_body_enteredleft(body: Node2D) -> void:
 func _on_body_exitedleft(body: Node2D) -> void:
 	direction = 0
 func triggerthrow():
-	$"..".shoot()"""
+	$"..".shoot()

@@ -6,8 +6,22 @@ var locked_until_finished = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if parent.velocity.x != 0 and parent.stunned == false:
+	if parent.velocity.x != 0 and parent.stunned == false and parent.knockedback == false:
 		play_animation("run", false)
+		
+	elif parent.stunned == true and parent.knockedback == false:
+		play_animation("hurt", false)
+		if frame_changed:
+			await get_tree().create_timer(0.12).timeout
+			frame = Rack.combo -1
+			
+			
+	elif parent.stunned == false and parent.knockedback == true:
+		play_animation("knockback", false)
+	
+	elif parent.stunned == true and parent.knockedback == true:
+		play_animation("getup",true)
+	
 	else: 
 		play_animation("idle", false)
 func play_animation(name: String, lock := false):

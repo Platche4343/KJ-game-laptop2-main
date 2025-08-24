@@ -1,20 +1,14 @@
-[gd_scene load_steps=29 format=3 uid="uid://be41ru4j3v24"]
+[gd_scene load_steps=20 format=3 uid="uid://be41ru4j3v24"]
 
 [ext_resource type="Script" path="res://Global.gd" id="1_bjjmn"]
 [ext_resource type="PackedScene" uid="uid://covmf03pu1sll" path="res://Rack.tscn" id="1_kb4ok"]
 [ext_resource type="PackedScene" uid="uid://bs0gxavncsid4" path="res://portal.tscn" id="3_frlg1"]
 [ext_resource type="Script" path="res://checkpoint_1.gd" id="4_82hxs"]
 [ext_resource type="Texture2D" uid="uid://bf3sinx5w3lhi" path="res://biden.png" id="5_wajhc"]
-[ext_resource type="Texture2D" uid="uid://b6y1sjgkluwgw" path="res://blue man thing guy not translparent.PNG" id="6_xqiw5"]
 [ext_resource type="PackedScene" uid="uid://b6btpcek4h4oi" path="res://blue_guy.tscn" id="8_usauy"]
 [ext_resource type="PackedScene" uid="uid://djgrri2qjoose" path="res://amazing_man.tscn" id="9_otmrf"]
 [ext_resource type="Script" path="res://win!.gd" id="10_k4v32"]
 [ext_resource type="Texture2D" uid="uid://d22a4bee1vv3x" path="res://rick face.PNG" id="11_iu3vp"]
-[ext_resource type="Script" path="res://detectright_a.gd" id="15_5xr3r"]
-[ext_resource type="Script" path="res://amazing_man.gd" id="15_j3c38"]
-[ext_resource type="Script" path="res://detectleft_a.gd" id="16_a5tac"]
-[ext_resource type="Script" path="res://amazinggethit.gd" id="16_mitbe"]
-[ext_resource type="Script" path="res://blue_man_thing_guy_not_translparent.gd" id="17_5a3gb"]
 [ext_resource type="Script" path="res://level1cam.gd" id="20_qhspq"]
 [ext_resource type="PackedScene" uid="uid://dmefyme4cohb8" path="res://ui.tscn" id="20_rxoio"]
 [ext_resource type="PackedScene" uid="uid://cry5rx3711gmw" path="res://HealthBar.tscn" id="20_vvpr1"]
@@ -26,15 +20,6 @@ radius = 996.425
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2r77g"]
 size = Vector2(118.77, 135.872)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fvmy"]
-size = Vector2(296, 312)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdgv8"]
-size = Vector2(288, 296)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ie247"]
-size = Vector2(1820.37, 609.159)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ybp68"]
 font_color = Color(1, 0, 0, 1)
@@ -82,6 +67,7 @@ position = Vector2(289, -892)
 
 [node name="checkpoint1" type="Area2D" parent="."]
 position = Vector2(4399, -285)
+collision_mask = 5
 script = ExtResource("4_82hxs")
 metadata/_edit_group_ = true
 
@@ -97,6 +83,7 @@ shape = SubResource("CircleShape2D_wrixj")
 
 [node name="checkpoint2" type="Area2D" parent="."]
 position = Vector2(7803, -339)
+collision_mask = 5
 script = ExtResource("4_82hxs")
 metadata/_edit_group_ = true
 
@@ -137,48 +124,8 @@ position = Vector2(10683, -676)
 
 [node name="Amazing man" parent="." instance=ExtResource("9_otmrf")]
 
-[node name="Amazing man2" type="CharacterBody2D" parent="."]
-position = Vector2(6874, -1209)
-script = ExtResource("15_j3c38")
-metadata/_edit_group_ = true
-
-[node name="GetHit" type="Area2D" parent="Amazing man2"]
-script = ExtResource("16_mitbe")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Amazing man2/GetHit"]
-position = Vector2(7, -31)
-shape = SubResource("RectangleShape2D_0fvmy")
-debug_color = Color(0.94508, 5.77569e-06, 0.594116, 0.42)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Amazing man2"]
-position = Vector2(3, -25)
-shape = SubResource("RectangleShape2D_vdgv8")
-
-[node name="amazingsprite" type="Sprite2D" parent="Amazing man2"]
-position = Vector2(6.63147, -25.1588)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_xqiw5")
-script = ExtResource("17_5a3gb")
-
-[node name="detectrightA" type="Area2D" parent="Amazing man2"]
-position = Vector2(111, -25)
-scale = Vector2(0.424638, 0.531881)
-script = ExtResource("15_5xr3r")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Amazing man2/detectrightA"]
-position = Vector2(899.279, -3.46191)
-shape = SubResource("RectangleShape2D_ie247")
-debug_color = Color(0.780392, 0.439216, 0, 0.419608)
-
-[node name="detectleftA" type="Area2D" parent="Amazing man2"]
-position = Vector2(-89, -25)
-scale = Vector2(1.50464, 6.33188)
-script = ExtResource("16_a5tac")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Amazing man2/detectleftA"]
-position = Vector2(-924.626, -3.46168)
-shape = SubResource("RectangleShape2D_ie247")
-debug_color = Color(0.780392, 0.439216, 0, 0.419608)
+[node name="Amazing man2" parent="." instance=ExtResource("9_otmrf")]
+position = Vector2(6930, -1111)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_speed = 10.0
@@ -242,4 +189,3 @@ vertical_alignment = 1
 [connection signal="body_entered" from="checkpoint1" to="checkpoint1" method="_on_body_entered"]
 [connection signal="body_entered" from="checkpoint2" to="checkpoint2" method="_on_body_entered"]
 [connection signal="body_entered" from="win!" to="win!" method="_on_body_entered"]
-[connection signal="body_entered" from="Amazing man2/GetHit" to="Amazing man2/GetHit" method="_on_body_entered"]

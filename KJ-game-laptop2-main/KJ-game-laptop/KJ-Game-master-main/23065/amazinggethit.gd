@@ -1,6 +1,7 @@
 extends Area2D
 signal amazingfreedom
-var amazinghealth = 50
+signal knockback
+var amazinghealth = 70
 var last_notifier: Area2D = null
 func _on_body_entered(body):
 
@@ -19,6 +20,10 @@ func _on_special_area_entered(by_area: Area2D) -> void:
 		amazinghealth -= 10
 	elif Rack.combo == 4:
 		amazinghealth -= 20
+		emit_signal("knockback")
+	elif Rack.combo == 5:
+		amazinghealth -= 10
+		
 
 	print("amazing", amazinghealth)
 	
