@@ -92,9 +92,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("18_nkl6v")
-}, {
-"duration": 1.0,
 "texture": ExtResource("19_mxw10")
 }, {
 "duration": 1.0,
@@ -102,6 +99,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("21_p0vjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_nkl6v")
 }],
 "loop": false,
 "name": &"hurt",
@@ -213,7 +213,7 @@ debug_color = Color(0.567014, 0.549587, 0.265252, 0.42)
 position = Vector2(-7, -30)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_0adgy")
-animation = &"knockback"
+animation = &"hurt"
 script = ExtResource("18_7836k")
 
 [connection signal="body_entered" from="attackbox" to="attackbox" method="_on_body_entered"]

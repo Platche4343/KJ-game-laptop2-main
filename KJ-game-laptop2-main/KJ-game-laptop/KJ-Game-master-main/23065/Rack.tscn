@@ -1,51 +1,68 @@
-[gd_scene load_steps=56 format=3 uid="uid://covmf03pu1sll"]
+[gd_scene load_steps=73 format=3 uid="uid://covmf03pu1sll"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_jnnw5"]
 [ext_resource type="Script" path="res://punch_hitbox.gd" id="5_0vvmb"]
 [ext_resource type="Script" path="res://punch_area.gd" id="5_udoqa"]
-[ext_resource type="Texture2D" uid="uid://cpqsw0jwxinwu" path="res://kjanimations/fall/jump3.png" id="6_6adh8"]
+[ext_resource type="Texture2D" uid="uid://d17l816q4q6bj" path="res://kjanimations/fall/jump(new)-6.png.png" id="6_d4hrd"]
 [ext_resource type="Texture2D" uid="uid://xre3kndg07ym" path="res://kjanimations/dash/dash 1.png" id="6_ntawp"]
+[ext_resource type="Texture2D" uid="uid://cklatxutaoos3" path="res://kjanimations/fall/jump(new)-7.png.png" id="7_1jfn5"]
 [ext_resource type="Texture2D" uid="uid://ux1ljk4nfbjc" path="res://kjanimations/walk/walk-1.png" id="7_15hbe"]
 [ext_resource type="Texture2D" uid="uid://wjdeluen6bwb" path="res://kjanimations/idle/idle-1.png" id="7_56bkr"]
 [ext_resource type="Texture2D" uid="uid://dsoiuf4sjmfhn" path="res://kjanimations/dash/dash 2.png" id="7_62mwb"]
 [ext_resource type="Texture2D" uid="uid://cj654aspkis7w" path="res://kjanimations/walk/walk-2.png" id="8_0kj1b"]
 [ext_resource type="Texture2D" uid="uid://bef4ndmcu3uyd" path="res://kjanimations/idle/idle-2.png" id="8_5romf"]
-[ext_resource type="Texture2D" uid="uid://cw8kod5d0x2ak" path="res://kjanimations/jump/jump1.png" id="9_c60hj"]
+[ext_resource type="Texture2D" uid="uid://blwmo2m2ommx4" path="res://kjanimations/fall/jump(new)-8.png.png" id="8_csnuu"]
+[ext_resource type="Texture2D" uid="uid://401gm1gk7ti6" path="res://kjanimations/jump/jump(new)-1.png.png" id="9_rbrge"]
 [ext_resource type="Texture2D" uid="uid://dvlx3k21hpisc" path="res://kjanimations/walk/walk-3.png" id="9_u4bcn"]
 [ext_resource type="Texture2D" uid="uid://bcrkrkv47vflg" path="res://kjanimations/run/serious run-1.png.png" id="9_ubpeg"]
+[ext_resource type="Texture2D" uid="uid://b40tde548dx80" path="res://kjanimations/fall/jump(new)-9.png.png" id="9_xnj0c"]
+[ext_resource type="Texture2D" uid="uid://d2ucysmrmg1ob" path="res://kjanimations/fall/jump(new)-10.png.png" id="10_3464e"]
 [ext_resource type="Texture2D" uid="uid://bqtqgu8wmu538" path="res://kjanimations/walk/walk-4.png" id="10_eh5xf"]
+[ext_resource type="Texture2D" uid="uid://bd3ivmr728xwd" path="res://kjanimations/jump/jump(new)-2.png.png" id="10_negut"]
 [ext_resource type="Texture2D" uid="uid://8ke6iscxj5gb" path="res://kjanimations/run/serious run-2.png.png" id="10_nq07m"]
-[ext_resource type="Texture2D" uid="uid://bjtx7xm2eqnsv" path="res://kjanimations/jump/jump2.png" id="10_wmlsy"]
+[ext_resource type="Texture2D" uid="uid://5ou7jy4e7e8x" path="res://kjanimations/jump/jump(new)-3.png.png" id="11_6nkd4"]
+[ext_resource type="Texture2D" uid="uid://bv5i4trna1vpo" path="res://kjanimations/fall/jump(new)-11.png.png" id="11_e2ewj"]
 [ext_resource type="Texture2D" uid="uid://b55nj681i7k5j" path="res://kjanimations/run/serious run-3.png.png" id="11_f5oea"]
 [ext_resource type="Texture2D" uid="uid://bpit76ngk0nd" path="res://kjanimations/walk/walk-5.png" id="11_trani"]
-[ext_resource type="Texture2D" uid="uid://busorkhvub8kf" path="res://kjanimations/jump/jump3.png" id="11_xg5gd"]
 [ext_resource type="Texture2D" uid="uid://pd1ehkow74nb" path="res://kjanimations/m1s/1/kj puch 1-1.png.png" id="12_1bnsd"]
+[ext_resource type="Texture2D" uid="uid://dfodb4av2ekgv" path="res://kjanimations/fall/jump(new)-12.png.png" id="12_2xumw"]
 [ext_resource type="Texture2D" uid="uid://bepqdfdcvbhmf" path="res://kjanimations/walk/walk-6.png" id="12_51i0a"]
 [ext_resource type="Texture2D" uid="uid://cs7nprpwrmyos" path="res://kjanimations/run/serious run-4.png.png" id="12_b5seb"]
 [ext_resource type="Texture2D" uid="uid://bysofo5gc2m1i" path="res://kjanimations/m1s/4/kj kick-1.png.png" id="12_bc0i6"]
+[ext_resource type="Texture2D" uid="uid://jyr1308yjn6s" path="res://kjanimations/jump/jump(new)-4.png.png" id="12_qm7bt"]
 [ext_resource type="Texture2D" uid="uid://l2fmfjc27c35" path="res://kjanimations/m1s/1/kj puch 1-2.png.png" id="13_2uijj"]
 [ext_resource type="Texture2D" uid="uid://cfmrehymquqyf" path="res://kjanimations/run/serious run-5.png.png" id="13_bt7nj"]
+[ext_resource type="Texture2D" uid="uid://csfmvpyf3r4v8" path="res://kjanimations/jump/jump(new)-5.png.png" id="13_jx07r"]
 [ext_resource type="Texture2D" uid="uid://dxoj07brxs5lj" path="res://kjanimations/m1s/4/kj kick-2.png.png" id="13_kwddx"]
 [ext_resource type="Texture2D" uid="uid://cx6hwi06sj4i4" path="res://kjanimations/walk/walk-7.png" id="13_lfd4y"]
+[ext_resource type="Texture2D" uid="uid://ddq1ahur4c1u2" path="res://kjanimations/fall/jump(new)-13.png.png" id="13_xqg2s"]
 [ext_resource type="Texture2D" uid="uid://d243a340wmvxd" path="res://kjanimations/m1s/1/kj puch 1-3.png.png" id="14_184uo"]
 [ext_resource type="Texture2D" uid="uid://4basc4on44ix" path="res://kjanimations/run/serious run-6.png.png" id="14_cqo5o"]
 [ext_resource type="Texture2D" uid="uid://woohg2eoaq60" path="res://kjanimations/m1s/4/kj kick-3.png.png" id="14_m0b64"]
 [ext_resource type="Texture2D" uid="uid://bsliwsue12ige" path="res://kjanimations/walk/walk-8.png" id="14_qakhn"]
+[ext_resource type="Texture2D" uid="uid://b0kg2oo0yrmny" path="res://kjanimations/fall/jump(new)-14.png.png" id="14_slbpo"]
 [ext_resource type="Texture2D" uid="uid://bwd5vup82qw88" path="res://kjanimations/m1s/1/kj puch 1-4.png.png" id="15_5ho4n"]
 [ext_resource type="Texture2D" uid="uid://clfpophatn38n" path="res://kjanimations/m1s/4/kj kick-4.png.png" id="15_haafi"]
 [ext_resource type="Texture2D" uid="uid://dqtcgfkopx5o6" path="res://kjanimations/run/serious run-7.png.png" id="15_ksv1o"]
+[ext_resource type="Texture2D" uid="uid://dgkxwyuepbbs6" path="res://kjanimations/fall/jump(new)-15.png.png" id="15_n5ui1"]
+[ext_resource type="Texture2D" uid="uid://dvprjgcstapwy" path="res://kjanimations/fall/jump(new)-16.png.png" id="16_i36k7"]
 [ext_resource type="Texture2D" uid="uid://erxbpirkyhad" path="res://kjanimations/m1s/4/kj kick-5.png.png" id="16_m3k8o"]
 [ext_resource type="Texture2D" uid="uid://cvdkuhi868b7e" path="res://kjanimations/run/serious run-8.png.png" id="16_pbyuk"]
 [ext_resource type="Texture2D" uid="uid://nx7xm65dh3ub" path="res://kjanimations/m1s/1/kj puch 1-5.png.png" id="16_td7mb"]
+[ext_resource type="Texture2D" uid="uid://doxg7kx60dxpr" path="res://kjanimations/fall/jump(new)-17.png.png" id="17_bk3ge"]
 [ext_resource type="Script" path="res://animation.gd" id="17_d3mu1"]
 [ext_resource type="Texture2D" uid="uid://d0rttan263j02" path="res://kjanimations/m1s/4/kj kick-6.png.png" id="17_it8ii"]
 [ext_resource type="Texture2D" uid="uid://brihkv1cxxnh5" path="res://kjanimations/m1s/2/kj puch 2-1.png.png" id="17_jcdue"]
 [ext_resource type="Texture2D" uid="uid://b6lmbijbbnq57" path="res://kjanimations/m1s/2/kj puch 2-2.png.png" id="18_54gag"]
 [ext_resource type="Texture2D" uid="uid://coykh0cursfi1" path="res://kjanimations/m1s/4/kj kick-7.png.png" id="18_fvdyr"]
+[ext_resource type="Texture2D" uid="uid://wjlodxmyokqf" path="res://kjanimations/fall/jump(new)-18.png.png" id="18_giev7"]
+[ext_resource type="Texture2D" uid="uid://bkctc4vnoo65b" path="res://kjanimations/fall/jump(new)-19.png.png" id="19_ck6g6"]
 [ext_resource type="Texture2D" uid="uid://ntlmx7akutt1" path="res://kjanimations/m1s/2/kj puch 2-3.png.png" id="19_dspvb"]
 [ext_resource type="Texture2D" uid="uid://dcf5y6nr6vhd3" path="res://kjanimations/m1s/4/kj kick-8.png.png" id="19_oql1o"]
 [ext_resource type="Texture2D" uid="uid://n0wv4rye7moh" path="res://kjanimations/m1s/2/kj puch 2-4.png.png" id="20_rhje7"]
+[ext_resource type="Texture2D" uid="uid://cy5q8xb5b80np" path="res://kjanimations/fall/jump(new)-20.png.png" id="20_ucoic"]
 [ext_resource type="Texture2D" uid="uid://5cg4hr3tfn2n" path="res://kjanimations/m1s/2/kj puch 2-5.png.png" id="21_3q36a"]
+[ext_resource type="Texture2D" uid="uid://br30hg1iu8py" path="res://kjanimations/hurt/hurt kj-1.png.png" id="21_ft0vg"]
 [ext_resource type="Texture2D" uid="uid://dlcxf8mg7kt66" path="res://kjanimations/m1s/3/kj puch 3-1.png.png" id="22_khvbq"]
 [ext_resource type="Texture2D" uid="uid://bjq748wx7oin4" path="res://kjanimations/m1s/3/kj puch 3-2.png.png" id="23_ke6hl"]
 [ext_resource type="Texture2D" uid="uid://c0ckr1chofksj" path="res://kjanimations/m1s/3/kj puch 3-3.png.png" id="24_dhte3"]
@@ -74,11 +91,61 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_6adh8")
+"texture": ExtResource("6_d4hrd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1jfn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_csnuu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xnj0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3464e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_e2ewj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2xumw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_xqg2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_slbpo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_n5ui1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_i36k7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_bk3ge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_giev7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ck6g6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ucoic")
 }],
-"loop": true,
+"loop": false,
 "name": &"fall",
-"speed": 1.0
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_ft0vg")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 0.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -93,20 +160,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_c60hj")
+"texture": ExtResource("9_rbrge")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_wmlsy")
+"texture": ExtResource("10_negut")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_wmlsy")
+"texture": ExtResource("11_6nkd4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_xg5gd")
+"texture": ExtResource("12_qm7bt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jx07r")
 }],
 "loop": false,
 "name": &"jump",
-"speed": 18.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -284,8 +354,7 @@ unique_name_in_owner = true
 position = Vector2(0, 37)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_6hnwk")
-animation = &"walk"
-frame_progress = 0.142025
+animation = &"hurt"
 flip_h = true
 script = ExtResource("17_d3mu1")
 

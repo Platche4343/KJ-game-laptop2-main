@@ -10,11 +10,13 @@ func _process(delta: float) -> void:
 		play_animation("run", false)
 		
 	elif parent.stunned == true and parent.knockedback == false:
-		play_animation("hurt", false)
-		if frame_changed:
-			await get_tree().create_timer(0.12).timeout
+		#if Rack.attacking == true or Rack.dashing == true:
+		play_animation("hurt", true)
+		if Rack.combo == 5:
+			frame = 1
+		else:
 			frame = Rack.combo -1
-			
+		
 			
 	elif parent.stunned == false and parent.knockedback == true:
 		play_animation("knockback", false)

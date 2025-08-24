@@ -28,10 +28,10 @@ func go_left():
 	$BlueManThingGuyNotTranslparent.transform.x.x = -0.8
 func stop_right():
 	direction = 0
-	$BlueManThingGuyNotTranslparent.play("idle")
+	
 func stop_left():
 	direction = 0
-	$BlueManThingGuyNotTranslparent.play("idle")
+	
 func _physics_process(delta):
 	# Add gravity every frame
 	if stunned == false and knockedback == false:

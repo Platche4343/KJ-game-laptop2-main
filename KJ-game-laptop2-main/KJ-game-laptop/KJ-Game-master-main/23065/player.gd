@@ -89,6 +89,11 @@ func _physics_process(delta):
 		
 	if knockedback == false and stunned == false:	
 		if Input.is_action_pressed("Shift") and dashing == false:
+
+
+
+
+
 			sprinting = true
 		
 			speed = 620
@@ -98,6 +103,8 @@ func _physics_process(delta):
 		
 			speed = 300
 			velocity.x = Input.get_axis("walk_left", "walk_right") * speed
+
+
 		
 		if dashing == true:
 		
@@ -119,6 +126,9 @@ func _physics_process(delta):
 							transform.x.x =  Input.get_axis("walk_left", "walk_right") * -1
 						
 		elif Input.is_action_pressed("walk_left") and Input.is_action_pressed("walk_right"):
+
+
+
 			pass
 	
 	move_and_slide()

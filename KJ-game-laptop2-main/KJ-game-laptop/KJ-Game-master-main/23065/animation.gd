@@ -23,7 +23,7 @@ extends AnimatedSprite2D
 
 var current_anim = ""
 var locked_until_finished = false
-
+@onready var parent = get_parent()
 func _ready():
 	%Animations.connect("animation_finished", Callable(self, "_on_animation_finished"))
 
@@ -33,7 +33,7 @@ func _process(_delta):
 	
 	
 	
-	if Input.is_action_pressed("jump") and Rack.rackonfloor:
+	if (Input.is_action_pressed("jump") or Input.is_action_pressed("uparrow")) and Rack.rackonfloor:
 		play_animation("jump", true)
 	
 	
@@ -48,7 +48,7 @@ func _process(_delta):
 			play_animation("m1-4", true)
 	elif Rack.rackonfloor:
 		if not Rack.jumping or Rack.rackonfloor:
-			if Input.is_action_pressed("walk_left") or Input.is_action_pressed("walk_right"):
+			if (Input.is_action_pressed("walk_left") or Input.is_action_pressed("walk_right")) or (Input.is_action_pressed("leftarrow") or Input.is_action_pressed("rightarrow")):
 				if Rack.sprinting and Rack.movingX == true:
 					play_animation("run", false)
 				elif not Rack.attacking and Rack.movingX == true:
@@ -57,12 +57,14 @@ func _process(_delta):
 					play_animation("idle", false)
 			else:
 				play_animation("idle")
-	elif not Rack.rackonfloor:
+	elif not Rack.rackonfloor and parent.knockedback == false:
 		play_animation("fall", false)		
-	
-	if Rack.sprinting == true and Input.is_action_just_pressed("Space"):
-		if Rack.dashcooldown == false:
-			play_animation("dash", true)
+	elif not Rack.rackonfloor and parent.knockedback == true:
+		play_animation("hurt", false)	
+	if Rack.sprinting == true:
+		if Input.is_action_just_pressed("Space") or Input.is_action_pressed("x"):
+			if Rack.dashcooldown == false:
+				play_animation("dash", true)
 					
 		
 func play_animation(name: String, lock := false):
