@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://covmf03pu1sll"]
+[gd_scene load_steps=74 format=3 uid="uid://covmf03pu1sll"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_jnnw5"]
 [ext_resource type="Script" path="res://punch_hitbox.gd" id="5_0vvmb"]
@@ -71,7 +71,7 @@
 [ext_resource type="Texture2D" uid="uid://dvve2d2t2bi48" path="res://terrain-1.png.png" id="52_128v3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_715n0"]
-size = Vector2(244.5, 144)
+size = Vector2(155, 144)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6hnwk"]
 animations = [{
@@ -326,8 +326,15 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2j6aj"]
-size = Vector2(120, 247)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gfa6e"]
+radius = 37.5
+height = 239.0
+
+[sub_resource type="Curve" id="Curve_xfbw5"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 360), 0.0, 0.0, 0, 0, Vector2(0.797753, -114.725), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Rack" type="CharacterBody2D"]
 position = Vector2(582, 241)
@@ -345,7 +352,7 @@ script = ExtResource("5_udoqa")
 
 [node name="punchhitbox" type="CollisionShape2D" parent="Punch area"]
 unique_name_in_owner = true
-position = Vector2(-92.25, 57)
+position = Vector2(-47.5, 57)
 shape = SubResource("RectangleShape2D_715n0")
 script = ExtResource("5_0vvmb")
 
@@ -354,19 +361,43 @@ unique_name_in_owner = true
 position = Vector2(0, 37)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_6hnwk")
-animation = &"hurt"
+animation = &"idle"
 flip_h = true
 script = ExtResource("17_d3mu1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-16, 41.5)
-shape = SubResource("RectangleShape2D_2j6aj")
+position = Vector2(2, 44)
+shape = SubResource("CapsuleShape2D_gfa6e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 show_behind_parent = true
 position = Vector2(46, 32)
 scale = Vector2(13.1031, 9.17076)
 texture = ExtResource("52_128v3")
+
+[node name="hitground" type="CPUParticles2D" parent="."]
+position = Vector2(0, 158)
+emitting = false
+amount = 25
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(1, -100)
+spread = 40.82
+gravity = Vector2(0, 2400)
+initial_velocity_min = 424.25
+initial_velocity_max = 737.37
+angular_velocity_min = -1.9
+angular_velocity_max = 4.6
+angular_velocity_curve = SubResource("Curve_xfbw5")
+radial_accel_min = 22.22
+radial_accel_max = 90.91
+scale_amount_min = 5.0
+scale_amount_max = 15.0
+color = Color(0, 0, 0, 1)
+hue_variation_min = 0.97
+hue_variation_max = 0.97
 
 [connection signal="area_entered" from="Punch area" to="Punch area" method="_on_area_entered"]
 [connection signal="area_exited" from="Punch area" to="Punch area" method="_on_area_exited"]

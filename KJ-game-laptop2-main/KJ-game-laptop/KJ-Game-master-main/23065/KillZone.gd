@@ -6,6 +6,7 @@ func _on_body_entered(body: Node2D) -> void:
 		%Rack.position.x = Global.CheckpointX
 		%Rack.position.y = Global.CheckpointY
 		Global.Health = 100
+		$"../Camera2D".screen_shake(8, 10)
 #kills the player when health is equal to or less than zero.
 func _process(_delta):
 	if Global.Health == 0 or Global.Health <= 0:

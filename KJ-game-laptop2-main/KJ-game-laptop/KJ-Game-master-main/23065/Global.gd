@@ -1,6 +1,6 @@
 extends Node
 var CheckpointX = 0
-var CheckpointY = 10
+var CheckpointY = -200
 
 var Health = 100
 

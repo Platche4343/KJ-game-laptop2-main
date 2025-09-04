@@ -58,7 +58,7 @@ position = Vector2(60, 0)
 script = ExtResource("1_bjjmn")
 
 [node name="KillZone" parent="." instance=ExtResource("3_frlg1")]
-position = Vector2(-142, 7305)
+position = Vector2(-18, 2071)
 scale = Vector2(314.274, 4.25519)
 
 [node name="Rack" parent="." instance=ExtResource("1_kb4ok")]
@@ -128,7 +128,6 @@ position = Vector2(10683, -676)
 position = Vector2(6930, -1111)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-ignore_rotation = false
 position_smoothing_speed = 10.0
 script = ExtResource("20_qhspq")
 

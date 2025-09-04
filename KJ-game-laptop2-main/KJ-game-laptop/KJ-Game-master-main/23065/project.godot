@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 Global="*res://Global.gd"
 Rack="*res://Rack.gd"
+AudioManager="*res://AudioManager.gd"
+camera="*res://level1cam.gd"
 
 [global_group]
 

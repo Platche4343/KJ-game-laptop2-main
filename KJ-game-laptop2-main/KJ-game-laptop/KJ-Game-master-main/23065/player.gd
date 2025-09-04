@@ -9,6 +9,8 @@ signal playanimation
 @export var ThrustY = -700
 @export var ThrustX = 700
 
+@onready var hitburst = load("res://m1 burst.tscn")
+@onready var jumpburst = load("res://jump air burst.tscn")
 @onready var parent = get_parent()
 
 var stunned = false
@@ -40,6 +42,7 @@ var combocooldown = false
 var m1cooldown = false
 
 var dashing = false
+
 
 var airtime: float
 func _ready():
@@ -84,6 +87,7 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 		rackonfloor = false
 		
+
 	else: 
 		rackonfloor = true
 		
@@ -117,6 +121,10 @@ func _physics_process(delta):
 			await dodash()
 		
 		if Input.is_action_pressed("jump") and is_on_floor() and dashing == false:
+			var instance = jumpburst.instantiate()
+			instance.global_position.x = global_position.x
+			instance.global_position.y = global_position.y + 150
+			get_tree().get_root().call_deferred("add_child", instance)
 			velocity.y = jump_speed
 			activatejump = true
 	
@@ -136,10 +144,11 @@ func _physics_process(delta):
 
 func jumpcheck():
 	if activatejump == true:
+		
 		activatejump = false
 		jumping = true
 		
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.5).timeout
 		jumping = false
 
 
@@ -155,6 +164,14 @@ func Cooldown(time):
 	dashcooldown = false
 
 func dodash():
+	var instance = hitburst.instantiate()
+	instance.transform.x.x = transform.x.x
+	instance.global_position.x = global_position.x
+	instance.global_position.y = global_position.y + 50
+	instance.scale.x = 1.6
+	instance.scale.y = 1.6
+	get_tree().get_root().call_deferred("add_child", instance)
+	
 	dashing = true
 	combo = 5
 	m1cooldown = false
@@ -231,6 +248,7 @@ func  _process(_delta):
 	updatepos()
 	UpdateVars()
 	jumphightcheck()
+	landparticles()
 func jumphightcheck():
 	if velocity.y == 0 and rackonfloor == false:
 		print(airtime) 
@@ -239,3 +257,12 @@ func jumphightcheck():
 	else:
 		await get_tree().create_timer(0.001).timeout
 		airtime += 0.001
+func landparticles():
+	if velocity.y > 1000:
+		await get_tree().process_frame
+		$hitground.amount = velocity.y / 150
+		if is_on_floor():
+	
+			
+			$hitground.emitting = true
+			

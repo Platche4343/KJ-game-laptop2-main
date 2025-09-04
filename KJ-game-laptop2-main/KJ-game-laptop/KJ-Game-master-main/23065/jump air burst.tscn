@@ -1,0 +1,54 @@
+[gd_scene load_steps=12 format=3 uid="uid://yiax1vn22h2e"]
+
+[ext_resource type="Texture2D" uid="uid://dg1bmbpij1tdc" path="res://air bursts/jump/air burst - jump-1.png.png" id="1_y75kr"]
+[ext_resource type="Texture2D" uid="uid://y4puq0qsu284" path="res://air bursts/jump/air burst - jump-2.png.png" id="2_jiqxi"]
+[ext_resource type="Texture2D" uid="uid://cgxihlutqiv6d" path="res://air bursts/jump/air burst - jump-3.png.png" id="3_8y7on"]
+[ext_resource type="Texture2D" uid="uid://ds127cnvm7vjm" path="res://air bursts/jump/air burst - jump-4.png.png" id="4_aba8f"]
+[ext_resource type="Texture2D" uid="uid://c40hcpv2pwf03" path="res://air bursts/jump/air burst - jump-5.png.png" id="5_b2vpb"]
+[ext_resource type="Texture2D" uid="uid://b3idtna0gx6m3" path="res://air bursts/jump/air burst - jump-6.png.png" id="6_t16l0"]
+[ext_resource type="Texture2D" uid="uid://mqgtemijnbi3" path="res://air bursts/jump/air burst - jump-7.png.png" id="7_7xb0r"]
+[ext_resource type="Texture2D" uid="uid://dr7am3qmsn4eq" path="res://air bursts/jump/air burst - jump-8.png.png" id="8_1vehq"]
+[ext_resource type="Texture2D" uid="uid://cfm274b405ixm" path="res://air bursts/jump/air burst - jump-9.png.png" id="9_ykbbj"]
+[ext_resource type="Script" path="res://jump_air_burst.gd" id="10_p6ua5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cmlmp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_y75kr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jiqxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8y7on")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_aba8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b2vpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_t16l0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7xb0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1vehq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ykbbj")
+}],
+"loop": false,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_cmlmp")
+frame = 8
+frame_progress = 1.0
+script = ExtResource("10_p6ua5")

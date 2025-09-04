@@ -34,7 +34,7 @@ func _process(_delta):
 	
 	
 	if (Input.is_action_pressed("jump") or Input.is_action_pressed("uparrow")) and Rack.rackonfloor:
-		play_animation("jump", true)
+		play_animation("jump", false)
 	
 	
 	elif Rack.attacking == true:
@@ -57,7 +57,7 @@ func _process(_delta):
 					play_animation("idle", false)
 			else:
 				play_animation("idle")
-	elif not Rack.rackonfloor and parent.knockedback == false:
+	elif not Rack.rackonfloor and parent.knockedback == false and Rack.jumping == false:
 		play_animation("fall", false)		
 	elif not Rack.rackonfloor and parent.knockedback == true:
 		play_animation("hurt", false)	

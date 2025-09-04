@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://b6btpcek4h4oi"]
+[gd_scene load_steps=41 format=3 uid="uid://b6btpcek4h4oi"]
 
 [ext_resource type="Script" path="res://blue_guy.gd" id="1_eg8jm"]
 [ext_resource type="Script" path="res://bluedohit.gd" id="3_xcdbh"]
@@ -162,6 +162,10 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_yjfgx"]
+offsets = PackedFloat32Array(0.526667, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 1, 1, 0)
+
 [node name="Blue Guy" type="CharacterBody2D"]
 position = Vector2(-602, -314)
 collision_layer = 2
@@ -215,6 +219,27 @@ scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_0adgy")
 animation = &"hurt"
 script = ExtResource("18_7836k")
+
+[node name="burst" type="CPUParticles2D" parent="BlueManThingGuyNotTranslparent"]
+position = Vector2(-23.75, 15)
+rotation = 3.13561
+emitting = false
+amount = 25
+lifetime = 0.4
+one_shot = true
+speed_scale = 3.0
+explosiveness = 0.62
+gravity = Vector2(0, 0)
+initial_velocity_min = 339.69
+initial_velocity_max = 501.31
+linear_accel_min = -100.0
+linear_accel_max = -100.0
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+color = Color(0.239216, 0.607843, 0.988235, 1)
+color_ramp = SubResource("Gradient_yjfgx")
 
 [connection signal="body_entered" from="attackbox" to="attackbox" method="_on_body_entered"]
 [connection signal="body_exited" from="attackbox" to="attackbox" method="_on_body_exited"]
